@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg{
+    background-color: #BD8400;
+}
+// header
+
+
+header{
+    display: flex;
+    width:100%;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 3em;  
+    height: 5rem;  
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 7;
+    transition:all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+      .nav_brand{
+        font-size: 1.5rem;
+        font-weight: semibold;
+        color:#e9e1d0;
+        text-shadow: 3px 3px 3px #000;
+      }
+
+      nav{
+          ul{
+              display: flex;
+              list-style: none;
+              li{
+                  position: relative;
+                  a{
+                    text-decoration: none;
+                    padding: 0 3em;
+                    display: block;
+                    transition: all 0.3s ease-in-out;
+                    color: #fff;
+                  }
+                  a:hover{
+                    color: #fff;
+                    background: #000;
+                  }
+                  a::after{
+                      content:'';
+                        position: absolute;
+                        bottom: -0.5em;
+                        left: 0;
+                        width: 0;
+                        height: 3px;
+                        background-color: #000;
+                        transition:all 0.3s ease-in-out;
+                  }
+                    &:hover{
+                        a:after{
+                            width: 100%;
+                        }
+                    }
+              }
+          }
+ 
+        }
+}
+header .menu{
+    display: none;
+}
+
+@media screen and (max-width: 768px){
+    header{
+        padding:0 0.5rem;
+        // background-color:#BD8400;     
+        .nav_brand{
+            font-size: 1.2rem;
+        }
+        nav{
+            display: none;
+            ul{
+                li{
+                    a{
+                        padding: 0 1em;
+                    }
+                }
+            }
+        }
+        .menu{
+            display: flex;
+            color:#fff;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    }
+}
+
